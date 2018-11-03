@@ -1,0 +1,30 @@
+{include=header}
+	<h1>Editar Markador</h1>
+	<div>
+		<form method="post" action="editar">
+			<div><label for="titulo">Titulo</label></div>
+			<div><input type="text" value="{titulo}" name="titulo" id="titulo" /></div>
+			
+			<div><label for="direccion">Dirección</label></div>
+			<div><input type="text" value="{url}" name="direccion" id="direccion" /></div>
+			
+			<div><label for="descripcion">Descripción</label></div>
+			<div><textarea name="descripcion" id="descripcion">{des}</textarea></div>
+			
+			<div><label for="categoria">Categoría</label></div>
+			<div><select name="categoria" id="categoria">
+					<option value="0">Seleccionar Categoría</option>
+					{cat_list}
+					<option value="{id}">{nombre}</option>
+					{/cat_list}
+				</select></div>
+			
+			<div><label for="tags">Etiquetas</label></div>
+			<div><input type="text" value="{tags}" name="tags" id="tags" /></div>
+			
+			<input type="hidden" name="id" value="{id}" />
+			
+			<div><input type="submit" value="enviar" name="enviar" /></div>
+		</form>
+	</div>
+{include=footer}

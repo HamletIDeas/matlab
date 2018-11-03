@@ -1,0 +1,66 @@
+{include=header}
+	<h1>Mis marcadores</h1>
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>Titulo</th>
+			<th>Dirección</th>
+			<th>Fecha</th>
+			<th>Descripción</th>
+			<th>Categoría</th>
+			<th>tags</th>
+			<th>Acción</th>
+		</tr>
+		{mark_list}
+		<tr id="mark_{id}">
+			<td>{id}</td>
+			<td class="mark_titulo">{titulo}</td>
+			<td class="mark_url"><a href="{url}" target="_blank">{url}</a></td>
+			<td>{fecha}</td>
+			<td class="mark_des">{descripcion}</td>
+			<td class="mark_cat">{categoria}</td>
+			<td class="mark_tags">{tags}</td>
+			<td>
+				<a href="index.php?seccion=borrar&id={id}"><button type="button">Borrar</button></a>
+				<a href="index.php?seccion=editar&id={id}">
+				<button type="button">Editar</button>
+				</a>
+			</td>
+		</tr>
+		{/mark_list}
+	</table>
+	<div>
+		Pagina {p_activa} de {p_numero} - 
+		{mark_paginacion}
+		<a href="{url}" class="{active}">{numero}</a> 
+		{/mark_paginacion}
+	</div>
+	<div>
+		<form method="post" action="index.php?seccion=crear">
+			<h2>Agregar Marcador</h2>
+			<div><label for="titulo">Titulo</label></div>
+			<div><input type="text" name="titulo" id="titulo" /></div>
+			
+			<div><label for="direccion">Dirección</label></div>
+			<div><input type="text" name="direccion" id="direccion" /></div>
+			
+			<div><label for="descripcion">Descripción</label></div>
+			<div><textarea name="descripcion" id="descripcion"></textarea></div>
+			
+			<div><label for="categoria">Categoría</label></div>
+			<div>
+				<select name="categoria" id="categoria">
+					<option value="0">Seleccionar Categoría</option>
+					{cat_list}
+					<option value="{id}">{nombre}</option>
+					{/cat_list}
+				</select>
+			</div>
+			
+			<div><label for="tags">Etiqueta</label></div>
+			<div><input type="text" name="tags" id="tags" /></div>
+			
+			<div><input type="submit" value="enviar" name="enviar" /></div>
+		</form>
+	</div>
+{include=footer}

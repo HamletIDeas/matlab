@@ -1,0 +1,15 @@
+{include=header}
+	<h1>Editar categoria</h1>
+	<div>
+		<form method="post" action="cat_editar">
+			<div><label for="nombre">Nombre</label></div>
+			<div><input type="text" value="{nombre}" name="nombre" id="nombre" /></div>
+			
+			<div><label for="url">url</label></div>
+			<div><input type="text" value="{url}" name="url" id="url" /></div>
+			<input type="hidden" name="id" value="{id}" />
+			
+			<div><input type="submit" value="enviar" name="enviar" /></div>
+		</form>
+	</div>
+{include=footer}

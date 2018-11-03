@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>{sec_title}</title>
+	<style>
+	.oculto{
+		display: none;
+		transition: 0.5s all;
+	}
+	</style>
+</head>
+<body>
+	<header>
+		<ul id="navegacion">
+			<li><a href="inicio">Inicio</a></li>
+			<li><a href="marks">Marcadores</a></li>
+			<li><a href="categorias">Categorías</a></li>
+			[no_sesion]
+			<li><a href="registro">Registro</a></li>
+			<li><a href="acceso">Acceso</a></li>
+			[/no_sesion]
+			[si_sesion]
+			<li><a href="salir">Salir ({nickname})</a></li>
+			[/si_sesion]
+		</ul>
+	</header>

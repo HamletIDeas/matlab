@@ -1,0 +1,38 @@
+{include=header}
+	<h1>Mis categorias</h1>
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>Nombre</th>
+			<th>url</th>
+			<th>Accion</th>
+		</tr>
+		{cat_list}
+		<tr id="cat_{id}">
+			<td>{id}</td>
+			<td class="cat_nombre">{nombre}</td>
+			<td class="cat_url">{url}</td>
+			<td>
+				<a href="index.php?seccion=cat_borrar&id={id}">
+					<button type="button">Borrar</button>
+				</a>
+				<a href="index.php?seccion=cat_editar&id={id}">
+					<button type="button">Editar</button>
+				</a>
+			</td>
+		</tr>
+		{/cat_list}
+	</table>
+	<div>
+		<form method="post" action="cat_crear">
+			<h2>Agregar Categoria</h2>
+			<div><label for="cat_nombre">Nombre</label></div>
+			<div><input type="text" name="cat_nombre" id="cat_nombre" /></div>
+
+			<div><label for="cat_url">url</label></div>
+			<div><input type="text" name="cat_url" id="cat_url" /></div>
+
+			<div><input type="submit" value="enviar" name="enviar" /></div>
+		</form>
+	</div>
+{include=footer}

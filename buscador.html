@@ -1,0 +1,35 @@
+{include=header}
+<form>
+  <input type="text" name="b" />
+  <input type="submit" value="buscar" />
+</form>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Titulo</th>
+    <th>Dirección</th>
+    <th>Fecha</th>
+    <th>Descripción</th>
+    <th>Categoría</th>
+    <th>tags</th>
+    <th>Acción</th>
+  </tr>
+  {buscador_list}
+  <tr id="mark_{id}">
+    <td>{id}</td>
+    <td class="mark_titulo">{titulo}</td>
+    <td class="mark_url"><a href="{url}" target="_blank">{url}</a></td>
+    <td>{fecha}</td>
+    <td class="mark_des">{descripcion}</td>
+    <td class="mark_cat">{categoria}</td>
+    <td class="mark_tags">{tags}</td>
+  </tr>
+  {/buscador_list}
+  </table>
+  <div>
+		Pagina {p_activa} de {p_numero} -
+		{mark_paginacion}
+		<a href="{url}" class="{active}">{numero}</a>
+		{/mark_paginacion}
+	</div>
+{include=footer}
